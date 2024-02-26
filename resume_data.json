@@ -1,0 +1,168 @@
+{
+    "name": {
+        "first_name": "Brian",
+        "last_name": "Keating",
+        "suffix": "Ph.D."    
+    },
+    "contact": {
+        "phone": "(555) 555-5555",
+        "email": "brikeats@gmail.com",
+        "address": [
+            "1234 Main St.",
+            "Anytown, US 12345"
+        ]
+    },
+    "social_media": {
+        "website": "https://brikeats.github.io",
+        "linkedin": "https://www.linkedin.com/in/brkeating/"
+    },
+    "summary": [
+        " Computer vision engineer with more than ten years of experience analyzing medical images using both classical image processing and deep learning.",
+        "Extensive track record of designing, developing, validating, and deploying machine learning models in regulated environments.",
+        "Technical leader with proven ability to turn cutting-edge research into robust, production-ready software."
+    ],
+    "experience": [
+        {
+            "title": "Chief Technical Officer",
+            "company": "Skintelligent",
+            "company_link": "https://skintelligentlab.com",
+            "start": "2021",
+            "end": "present",
+            "location": "Atlanta, GA (remote from San Diego)",
+            "duties": [
+                "Work with dermatologists to develop a suite of image analysis and deep learning solutions to assess skin health from cell phone photos.",
+                "Own the full machine learning stack: curate images, manage labeling, develop training pipelines, and validate clinical performance of five AI models.",
+                "Version and (automatically) deploy models behind documented APIs."
+            ]
+        },
+        {
+            "title": "Senior Scientist, MLOps Lead",
+            "company": "Cortechs.ai",
+            "company_link": "https://www.cortechs.ai",
+            "start": "2020",
+            "end": "2021",
+            "location": "San Diego, CA",
+            "duties": [
+                "Led the technical development of an AI-driven brain cancer app from conception through FDA submission.",
+                "Built scalable machine learning devops using mlflow, quiltdata, and github actions.",
+                "Designed and developed a clean, well-documented, well-tested Python package for medical image analysis."
+            ]
+        },
+        {
+            "title": "Machine Learning & AI Engineer",
+            "company": "Healthlytix (merged with Cortechs.ai)",
+            "company_link": "https://www.cortechs.ai/insight/cortechs-labs-and-healthlytix-announce-merger-to-expand-leadership-in-radiology-ai-applications-to-detect-and-quantify-certain-cancers-and-neurodegenerative-disease",
+            "start": "2018",
+            "end": "2020",
+            "location": "San Diego, CA",
+            "duties": [
+                "Designed and trained convolutional neural networks for segmentation of prostate MRIs.",
+                "Developed two academic prototypes into robust, production-level apps and helped guide them through FDA 510(k) clearance.",
+                "Wrote algorithms for registration and segmentation of head CTs for use by ER radiologists."
+            ]
+        },
+        {
+            "title": "Computer Vision Engineer",
+            "company": "Uptake",
+            "company_link": "https://www.uptake.com",
+            "start": "2016",
+            "end": "2018",
+            "location": "Chicago, IL",
+            "duties": [
+                "Led a small Data Science R&D group responsible for building Uptake's capabilities in image analytics.",
+                "Developed object detection and change detection algorithms using both classical image analysis and deep learning for use with satellite imagery.",
+                "Designed, implemented, and trained convolutional neural networks; personally curated and labeled a 30,000-image dataset."
+            ]
+        },
+        {
+            "title": "Image Analysis & Data Visualization Consultant",
+            "company": "Research Computing Center (RCC)",
+            "company_link": "https://rcc.uchicago.edu",
+            "start": "2015",
+            "end": "2016",
+            "location": "University of Chicago - Chicago, IL",
+            "duties": [
+                "Scripted image processing -- segmentation, registration, filtering, tracking -- for microscopy and MRI research.",
+                "Installed software and provided tech support for users of RCC's 13,000 node cluster.",
+                "Taught \"Image Analysis in Python\" and \"Introduction to RCC\" workshops."
+            ]
+        },
+        {
+            "title": "MR Research Specialist / Assistant Researcher",
+            "company": "MRI Research Center",
+            "company_link": "https://mri.jabsom.hawaii.edu",
+            "start": "2008",
+            "end": "2014",
+            "location": "University of Hawaii - Honolulu, HI",
+            "duties": [
+                "Pioneered novel methods for correction of patient motion during MRI acquisition.",
+                "Designed, implemented, and published real-time motion correction algorithms for use in clinical studies.",
+                "Awarded an intramural NIH grant to adapt MRI motion correction technology for use in a neonatal population.",
+                "Supported the lab by scripting data analysis, mentoring new hires, and organizing a journal club."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Ph.D. in physics",
+            "institution": "College of William & Mary",
+            "institution_link": "https://www.wm.edu/as/physics/",
+            "location": "Williamburg, VA",
+            "year": "2007"
+        },
+        {
+            "degree": "B.A. in physics",
+            "institution": "St. Mary's College of Maryland",
+            "institution_link": "https://www.smcm.edu/physics/",
+            "location": "St. Mary's City, MD",
+            "year": "2003"
+        }
+    ],
+    "skills": {
+        "Computer Vision & Image Analysis": [
+            "convolutional neural networks for image segmentation and object detection",
+            "image filtering, registration, and segmentation",
+            "object tracking",
+            "camera calibration"
+        ],
+        "Programming Languages & Frameworks": [
+            "Python and scientific Python stack (numpy, scipy, scikit-learn, pandas)",
+            "pytorch",
+            "opencv",
+            "working knowledge of bash",
+            "Flask",
+            "Django",
+            "basic Javascript/html/css",
+            "Matlab",
+            "rusty C++"
+        ],
+        "Data Analysis & Machine Learning": [
+            "standard techniques for supervised learning (linear models, random forests, neural networks) and unsupervised learning (PCA, k-means clustering)",
+            "Kalman filtering",
+            "versioning, labeling, and analysis of large image datasets",
+            "classical statistics for clinical data analysis"
+        ],
+        "Devops & Cloud": [
+            "Docker",
+            "git",
+            "AWS (Fargate, Lambda, ECR, S3, etc.)",
+            "terraform",
+            "github actions",
+            "mlflow",
+            "DVC"
+        ]
+    },
+    "patents": [
+        {
+            "name": "Systems, devices, and methods for detecting false movements for motion correction during a medical imaging scan",
+            "number": "15222811",
+            "link": "https://patents.google.com/patent/US20170032538A1",
+            "coinventors": [
+                "Thomas Ernst",
+                "Aditya Singh",
+                "Maxim Zaitsev",
+                "Michael Herbst"
+            ]
+        }
+    ]
+}

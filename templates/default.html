@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>{{ name.first_name }} {{ name.last_name }}'s Resume</title>
+</head>
+
+<body>
+    <h1 id="name">{{ name.first_name }} {{ name.last_name }}{% if name.suffix is defined %}, {{name.suffix}}{% endif %}</h1>
+
+    {% if contact.address is defined %}
+    <p id="address">{{ contact.address | join(" ") }}</p>
+    {% endif %}
+
+    {% if contact is defined %}
+    <p>
+        {% if contact.phone is defined %}
+        <div id="phone">{{ contact.phone }}</div>
+        {% endif %}
+        {% if social_media.website is defined %}
+        <a id="website" href="{{ social_media.website }}"><u>{{ social_media.website | replace("https://","") }}</u></a> 
+        {% endif %}
+        {% if contact.email is defined %}
+        <a id="email" href="mailto:{{ contact.email }}"><u>{{ contact.email }}</u></a>
+        {% endif %}
+    </p>
+    {% endif %}
+
+    {% if summary is defined %}
+    <h2 id="summary_title">Summary</h2>
+    <p id="summary">
+        {{ summary | join(" ") }}
+    </p>
+    {% endif %}
+
+    <h2 id="experience_title">Experience</h2>
+    {% for position in experience %}
+        <p><strong>{{ position.title }} </strong>{{ position.start }}-{{ position.end }}</p>
+        <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>{% if position.location is defined %} - {{ position.location }}{% endif %}</p>
+        {% if position.duties is defined %}
+            <ul>
+                {% for duty in position.duties %}
+                <li>{{ duty }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+    <h2 id="education_title">Education</h2>
+    {% for degree in education %}
+    <p><strong>{{ degree.institution }}</strong>{% if degree.location is defined %}, {{ degree.location }}{% endif %} {{ degree.year }}</p>
+    <p>{{ degree.degree }}</p>
+    {% endfor %}
+
+    {% if skills is defined %}
+    <h2 id="skills_title">Skills</h2>
+    {% for skill_category, skill_names in skills.items() %}
+    <p><strong>{{ skill_category }}</strong></p>
+    <p>{{ skill_names | join("; ") }}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if patents is defined %}
+    <h2 id="patent_title">Patent{%if patents|length > 1 %}s{% endif %}</h2>
+    {% for patent in patents %}
+    “{{ patent.name }}”, <a href="{{ patent.link }}"><u>US patent {{ patent.number }}</u></a>, with {{ patent.coinventors | join(", ") }}
+    {% endfor %}
+    {% endif %}
+
+</body>
+
+</html>

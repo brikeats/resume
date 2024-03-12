@@ -24,7 +24,7 @@ jobs:
       run: pip install Jinja2
     
     - name: Build HTML page
-      run: python render_html.py --template default --out html/resume.html resume_data.json
+      run: python render_html.py --template default --out html/index.html resume_data.json
 
     - name: Setup Pages
       uses: actions/configure-pages@v4

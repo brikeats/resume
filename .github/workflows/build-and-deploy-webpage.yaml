@@ -23,7 +23,7 @@ jobs:
       run: python render_html.py --template default --out html/resume.html resume_data.json
 
     - name: Setup Pages
-        uses: actions/configure-pages@v4
+      uses: actions/configure-pages@v4
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

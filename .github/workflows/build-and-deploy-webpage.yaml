@@ -4,6 +4,9 @@ on:
       - main
       - develop
 
+permissions:
+  id-token: write
+
 jobs:
 
   build-html:

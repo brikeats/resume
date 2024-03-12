@@ -1,0 +1,26 @@
+on:
+  on: push
+    branches:
+        - main
+        -develop
+
+jobs:
+
+  build-html:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v4
+    
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: pip install Jinja2
+    
+    - name: Build HTML page
+      run: python render_html.py --template default --out html/resume.html resume_data.json
+
+    - name: Deploy to Github Pages
+      run: ls html

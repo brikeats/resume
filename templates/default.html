@@ -12,106 +12,119 @@
 
 <body>
 
-    <div class="container-900" id="content">
+    <div class="container-fluid">
 
         <div class="row">
-            <h1 id="name">{{ name.first_name }} {{ name.last_name }}{% if name.suffix is defined %}, {{name.suffix}}{% endif %}</h1>
-        </div>
 
-        {% if contact.address is defined %}
-        <div class="row">
-            <p id="address">{{ contact.address | join(" ") }}</p>
-        </div>
-        {% endif %}
+            <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div>
+
+            <div class="col px-1 px-sm-2 px-med-3 px-xl-4" id="content">
+
+                <div class="row">
+                    <h1 id="name">{{ name.first_name }} {{ name.last_name }}{% if name.suffix is defined %}, {{name.suffix}}{% endif %}</h1>
+                </div>
+
+                {% if contact.address is defined %}
+                <div class="row">
+                    <p id="address">{{ contact.address | join(" ") }}</p>
+                </div>
+                {% endif %}
 
 
-        {% if contact is defined %}
-        <div class="row" id="contactRow">
-            {% if contact.phone is defined %}
-            <div class="col">
-                <div id="phone">{{ contact.phone }}</div>
+                {% if contact is defined %}
+                <div class="row" id="contactRow">
+                    {% if contact.phone is defined %}
+                    <div class="col">
+                        <div id="phone">{{ contact.phone }}</div>
+                    </div>
+                    {% endif %}
+                    {% if social_media.website is defined %}
+                    <div class="col" style="text-align: right;">
+                        <a id="website" href="{{ social_media.website }}"><u>{{ social_media.website | replace("https://","") }}</u></a> 
+                    </div>
+                    {% endif %}
+                    {% if contact.email is defined %}
+                    <div class="col">
+                        <a id="email" href="mailto:{{ contact.email }}"><u>{{ contact.email }}</u></a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                <div class="row" id="headerBreakRow"><hr></div>
+
+                {% if summary is defined %}
+                <div class="row sectionTitleRow">
+                    <h2 id="summaryTitle">Summary</h2>
+                </div>
+                <div id="summary" class="px-3 leftIndent">
+                    {{ summary | join(" ") }}
+                </div>
+                {% endif %}
+
+                <div class="row sectionTitleRow sectionTitleRow">
+                    <h2 id="experienceTitle">Experience</h2>
+                </div>
+                {% for position in experience %}
+                <div class="row leftIndent">
+                    <div class="col positionTitle">{{ position.title }}</div>
+                    <div class="col positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
+                </div>
+                <div class="row leftIndent">
+                    <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>{% if position.location is defined %} - {{ position.location }}{% endif %}</p>
+                    {% if position.duties is defined %}
+                        <ul{% if loop.last %}class="noBottomMargin"{% endif %}>
+                            {% for duty in position.duties %}
+                            <li>{{ duty }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <div class="row sectionTitleRow">
+                    <h2 id="educationTitle">Education</h2>
+                </div>
+                {% for degree in education %}
+                <div class="row leftIndent">
+                    <p><strong>{{ degree.institution }}</strong>{% if degree.location is defined %}, {{ degree.location }}{% endif %} {{ degree.year }}</p>
+                    <p>{{ degree.degree }}</p>
+                </div>
+                {% endfor %}
+
+                {% if skills is defined %}
+                <div class="row sectionTitleRow">
+                    <h2 id="skillsTitle">Skills</h2>
+                </div>
+                {% for skill_category, skill_names in skills.items() %}
+                <div class="row leftIndent">
+                    <p><strong>{{ skill_category }}</strong></p>
+                    <p>{{ skill_names | join("; ") }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                {% if patents is defined %}
+                <div class="row sectionTitleRow">
+                    <h2 id="patentTitle">Patent{%if patents|length > 1 %}s{% endif %}</h2>
+                </div>
+                {% for patent in patents %}
+                <div class="row leftIndent">
+                    <div class="col">
+                        “{{ patent.name }}”, <a href="{{ patent.link }}"><u>US patent {{ patent.number }}</u></a>, with {{ patent.coinventors | join(", ") }}
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+
             </div>
-            {% endif %}
-            {% if social_media.website is defined %}
-            <div class="col-auto">
-                <a id="website" href="{{ social_media.website }}"><u>{{ social_media.website | replace("https://","") }}</u></a> 
-            </div>
-            {% endif %}
-            {% if contact.email is defined %}
-            <div class="col">
-                <a id="email" href="mailto:{{ contact.email }}"><u>{{ contact.email }}</u></a>
-            </div>
-            {% endif %}
-        </div>
-        {% endif %}
 
-        <div class="row" id="headerBreakRow"><hr></div>
+            <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div>
 
-        {% if summary is defined %}
-        <div class="row sectionTitleRow">
-            <h2 id="summaryTitle">Summary</h2>
-            <p id="summary" class="leftIndent">
-                {{ summary | join(" ") }}
-            </p>
         </div>
-        {% endif %}
-
-        <div class="row sectionTitleRow sectionTitleRow">
-            <h2 id="experienceTitle">Experience</h2>
-        </div>
-        {% for position in experience %}
-        <div class="row leftIndent">
-            <div class="col positionTitle">{{ position.title }}</div>
-            <div class="col positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
-        </div>
-        <div class="row leftIndent">
-            <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>{% if position.location is defined %} - {{ position.location }}{% endif %}</p>
-            {% if position.duties is defined %}
-                <ul{% if loop.last %}class="noBottomMargin"{% endif %}>
-                    {% for duty in position.duties %}
-                    <li>{{ duty }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-        {% endfor %}
-
-        <div class="row sectionTitleRow">
-            <h2 id="educationTitle">Education</h2>
-        </div>
-        {% for degree in education %}
-        <div class="row leftIndent">
-            <p><strong>{{ degree.institution }}</strong>{% if degree.location is defined %}, {{ degree.location }}{% endif %} {{ degree.year }}</p>
-            <p>{{ degree.degree }}</p>
-        </div>
-        {% endfor %}
-
-        {% if skills is defined %}
-        <div class="row sectionTitleRow">
-            <h2 id="skillsTitle">Skills</h2>
-        </div>
-        {% for skill_category, skill_names in skills.items() %}
-        <div class="row leftIndent">
-            <p><strong>{{ skill_category }}</strong></p>
-            <p>{{ skill_names | join("; ") }}</p>
-        </div>
-        {% endfor %}
-        {% endif %}
-
-        {% if patents is defined %}
-        <div class="row sectionTitleRow">
-            <h2 id="patentTitle">Patent{%if patents|length > 1 %}s{% endif %}</h2>
-        </div>
-        {% for patent in patents %}
-        <div class="row leftIndent">
-            <div class="col">
-                “{{ patent.name }}”, <a href="{{ patent.link }}"><u>US patent {{ patent.number }}</u></a>, with {{ patent.coinventors | join(", ") }}
-            </div>
-        </div>
-        {% endfor %}
-        {% endif %}
 
     </div>
+    
 
 </body>
 

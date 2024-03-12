@@ -1,0 +1,71 @@
+.container-900 {
+    width: 100%;
+    max-width: 900px;
+    padding-right: 3em;
+    padding-left: 3em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+  }
+
+#name {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#address {
+    text-align: center;
+    margin-bottom: 0.25em;
+}
+
+#headerBreakRow {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#phone {
+    text-align: right;
+}
+
+#website {
+    text-align: center;
+    display: inline-block;
+}
+
+.positionTitle{
+    font-weight: bold;
+}
+
+.sectionTitleRow{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 0.25em;
+}
+
+body {
+    background-color: gray;
+}
+
+#content {
+    padding-bottom: 2em;
+}
+
+.leftIndent {
+    margin-left: 0.75em;
+}
+
+.rightAligned {
+    text-align: right;
+}
+
+.noBottomMargin{
+    margin-bottom: 0px;
+}
+
+ul {
+    list-style-position: inside;
+}

@@ -5,12 +5,7 @@
         "suffix": "Ph.D."    
     },
     "contact": {
-        "phone": "(555) 555-5555",
-        "email": "brikeats@gmail.com",
-        "address": [
-            "1234 Main St.",
-            "Anytown, US 12345"
-        ]
+        "email": "brikeats@gmail.com"
     },
     "social_media": {
         "website": "https://brikeats.github.io",

@@ -22,5 +22,14 @@ jobs:
     - name: Build HTML page
       run: python render_html.py --template default --out html/resume.html resume_data.json
 
-    - name: Deploy to Github Pages
-      run: ls html
+    - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'html'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

@@ -80,7 +80,7 @@
                         {% if position.institution is defined or position.location is defined %} &ndash; {% endif %}{{ position.institution }}{% if position.institution is defined and position.location is defined %}, {% endif %}{{ position.location }}
                     </p>
                     {% if position.duties is defined %}
-                        <ul{% if loop.last %} class="mb-0"{% endif %}>
+                        <ul class="ps-3 ps-md-4 pe-2{% if loop.last %} mb-0{% endif %}">
                             {% for duty in position.duties %}
                             <li>{{ duty }}</li>
                             {% endfor %}

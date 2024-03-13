@@ -33,8 +33,7 @@ jobs:
       run: |
         cd html
         sudo cp static/fonts/* /usr/local/share/fonts
-        cat resume.html
-        google-chrome --no-sandbox --headless --disable-gpu --print-to-pdf --no-pdf-header-footer file://$(pwd)/resume.html
+        google-chrome --no-sandbox --headless --disable-gpu --print-to-pdf --no-pdf-header-footer file://$(pwd)/index.html
         mv output.pdf keating-resume.pdf
         ls
 

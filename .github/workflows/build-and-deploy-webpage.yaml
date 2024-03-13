@@ -32,7 +32,7 @@ jobs:
     - name: Print to pdf
       run: |
         cd html
-        cp static/fonts/* /usr/local/share/fonts
+        sudo cp static/fonts/* /usr/local/share/fonts
         google-chrome --no-sandbox --headless --disable-gpu --print-to-pdf resume.pdf --no-pdf-header-footer file://$(pwd)/resume.html
         ls
 

@@ -33,6 +33,11 @@ p {
     margin-bottom: 0.25em;
 }
 
+ul {
+    padding-left: 1.5em;
+    padding-right: 0.5em;
+}
+
 body {
     background-color: gray;
 }
@@ -46,12 +51,4 @@ body {
 .leftIndent {
     margin-left: 0.75em;
     margin-right: 0em;
-}
-
-.rightAligned {
-    text-align: right;
-}
-
-.noBottomMargin{
-    margin-bottom: 0px;
 }

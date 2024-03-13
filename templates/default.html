@@ -67,8 +67,12 @@
                 </div>
                 {% for position in experience %}
                 <div class="row leftIndent">
-                    <h5 class="col-auto mb-1 mt-2 positionTitle">{{ position.title }}</h5>
-                    <div class="col mb-1 mt-2 positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
+                    <div class="col-12 col-md-6">
+                        <h5 class="mb-1 mt-2 positionTitle">{{ position.title }}</h5>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-1 mt-md-2 positionDateRange text-md-end">{{ position.start }}&#8212;{{ position.end }}</div>
+                    </div>
                 </div>
                 <div class="row leftIndent">
                     <div class="col">
@@ -76,7 +80,7 @@
                         {% if position.institution is defined or position.location is defined %} &ndash; {% endif %}{{ position.institution }}{% if position.institution is defined and position.location is defined %}, {% endif %}{{ position.location }}
                     </p>
                     {% if position.duties is defined %}
-                        <ul{% if loop.last %} class="noBottomMargin"{% endif %}>
+                        <ul{% if loop.last %} class="mb-0"{% endif %}>
                             {% for duty in position.duties %}
                             <li>{{ duty }}</li>
                             {% endfor %}

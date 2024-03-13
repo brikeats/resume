@@ -52,11 +52,6 @@ body {
     text-align: right;
 }
 
-ul {
-    list-style-position: outside;
-    margin-left: 1em;
-}
-
 .noBottomMargin{
     margin-bottom: 0px;
 }

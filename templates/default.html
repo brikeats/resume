@@ -12,11 +12,10 @@
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid px-0">
 
         <div class="row">
 
-            <!-- <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div> -->
             <div class="hidden-xs p-0 m-0 col-md-1 col-xl-2"></div>
 
             <div class="col px-2 px-sm-3 px-md-5" id="content">
@@ -72,6 +71,7 @@
                     <div class="col mb-1 mt-2 positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
                 </div>
                 <div class="row leftIndent">
+                    <div class="col">
                     <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>
                         {% if position.institution is defined or position.location is defined %} &ndash; {% endif %}{{ position.institution }}{% if position.institution is defined and position.location is defined %}, {% endif %}{{ position.location }}
                     </p>
@@ -82,6 +82,7 @@
                             {% endfor %}
                         </ul>
                     {% endif %}
+                    </div>
                 </div>
                 {% endfor %}
 

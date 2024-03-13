@@ -24,10 +24,6 @@
     display: inline-block;
 }
 
-.positionTitle{
-    font-weight: bold;
-}
-
 .sectionTitleRow{
     margin-top: 1em;
     margin-bottom: 0em;
@@ -42,7 +38,8 @@ body {
 }
 
 #content {
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 4em;
     background-color: white;
 }
 
@@ -55,12 +52,11 @@ body {
     text-align: right;
 }
 
-.noBottomMargin{
-    margin-bottom: 0px;
-}
-
 ul {
-    /* list-style-position: inside; */
     list-style-position: outside;
     margin-left: 1em;
+}
+
+.noBottomMargin{
+    margin-bottom: 0px;
 }

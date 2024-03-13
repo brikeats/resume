@@ -16,9 +16,10 @@
 
         <div class="row">
 
-            <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div>
+            <!-- <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div> -->
+            <div class="hidden-xs p-0 m-0 col-md-1 col-xl-2"></div>
 
-            <div class="col px-1 px-sm-2 px-med-3 px-xl-4" id="content">
+            <div class="col px-2 px-sm-3 px-md-5" id="content">
 
                 <div class="row">
                     <h1 id="name">{{ name.first_name }} {{ name.last_name }}{% if name.suffix is defined %}, {{name.suffix}}{% endif %}</h1>
@@ -38,14 +39,14 @@
                         <div id="phone">{{ contact.phone }}</div>
                     </div>
                     {% endif %}
-                    {% if social_media.website is defined %}
-                    <div class="col" style="text-align: right;">
-                        <a id="website" href="{{ social_media.website }}"><u>{{ social_media.website | replace("https://","") }}</u></a> 
+                    {% if contact.email is defined %}
+                    <div class="col text-end">
+                        <a id="email" href="mailto:{{ contact.email }}"><u>{{ contact.email }}</u></a>
                     </div>
                     {% endif %}
-                    {% if contact.email is defined %}
+                    {% if social_media.website is defined %}
                     <div class="col">
-                        <a id="email" href="mailto:{{ contact.email }}"><u>{{ contact.email }}</u></a>
+                        <a id="website" href="{{ social_media.website }}"><u>{{ social_media.website | replace("https://","") }}</u></a> 
                     </div>
                     {% endif %}
                 </div>
@@ -67,13 +68,15 @@
                 </div>
                 {% for position in experience %}
                 <div class="row leftIndent">
-                    <div class="col positionTitle">{{ position.title }}</div>
-                    <div class="col positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
+                    <h5 class="col-auto mb-1 mt-2 positionTitle">{{ position.title }}</h5>
+                    <div class="col mb-1 mt-2 positionDateRange rightAligned">{{ position.start }}&#8212;{{ position.end }}</div>
                 </div>
                 <div class="row leftIndent">
-                    <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>{% if position.location is defined %} - {{ position.location }}{% endif %}</p>
+                    <p><a class="company" href="{{ position.company_link }}">{{ position.company }}</a>
+                        {% if position.institution is defined or position.location is defined %} &ndash; {% endif %}{{ position.institution }}{% if position.institution is defined and position.location is defined %}, {% endif %}{{ position.location }}
+                    </p>
                     {% if position.duties is defined %}
-                        <ul{% if loop.last %}class="noBottomMargin"{% endif %}>
+                        <ul{% if loop.last %} class="noBottomMargin"{% endif %}>
                             {% for duty in position.duties %}
                             <li>{{ duty }}</li>
                             {% endfor %}
@@ -87,8 +90,8 @@
                 </div>
                 {% for degree in education %}
                 <div class="row leftIndent">
-                    <p><strong>{{ degree.institution }}</strong>{% if degree.location is defined %}, {{ degree.location }}{% endif %} {{ degree.year }}</p>
-                    <p>{{ degree.degree }}</p>
+                    <h5 class="mt-1 mb-0">{{ degree.degree }}</h5>
+                    <p>{{ degree.institution }}, {{ degree.year }}</p>
                 </div>
                 {% endfor %}
 
@@ -98,7 +101,7 @@
                 </div>
                 {% for skill_category, skill_names in skills.items() %}
                 <div class="row leftIndent">
-                    <p><strong>{{ skill_category }}</strong></p>
+                    <h5 class="mt-2 mb-1">{{ skill_category }}</h5>
                     <p>{{ skill_names | join("; ") }}</p>
                 </div>
                 {% endfor %}
@@ -119,7 +122,7 @@
 
             </div>
 
-            <div class="hidden-xs p-0 m-0 col-sm-1 col-md-2 col-xl-3"></div>
+            <div class="hidden-xs p-0 m-0 col-md-1 col-xl-2"></div>
 
         </div>
 

@@ -12,3 +12,11 @@ I'm running this in a Python 3.11 conda environment.
 * Convert to pdf with Chrome. Change to the build folder (`cd html`) and run:
     * Linux: `google-chrome --headless --no-sandbox --disable-gpu --print-to-pdf --no-pdf-header-footer file://$(pwd)/html/resume.html`
     * MacOS: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --no-sandbox --disable-gpu --print-to-pdf --no-pdf-header-footer file://$(pwd)/html/resume.html`
+
+# Automated Deployment
+
+The github Actions workflow builds the webpage, prints it to pdf, and deploys to Github Pages.
+
+The webpage is [here](https://brikeats.github.io/resume/).
+
+The pdf is [here](https://brikeats.github.io/resume/keating-resume.pdf).
